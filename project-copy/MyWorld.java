@@ -24,7 +24,11 @@ public class MyWorld extends World
      */
     private void prepare()
     {
-        Bee bee =  new Bee();
+        Bee bee =  new  Bee();
         addObject(bee, 289, 199);
+        Bee bee2 =  new  Bee();
+        addObject(bee2, 485, 119);
+        Bee bee3 =  new  Bee();
+        addObject(bee3, 90, 297);
     }
 }
