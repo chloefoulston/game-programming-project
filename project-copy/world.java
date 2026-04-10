@@ -6,13 +6,13 @@ import greenfoot.*;
 /**
  * 
  */
-public class MyWorld extends World
+public class world extends World
 {
 
     /**
-     * Constructor for objects of class MyWorld.
+     * Constructor for objects of class world.
      */
-    public MyWorld()
+    public world()
     {
         super(600, 400, 1);
         prepare();
@@ -24,11 +24,9 @@ public class MyWorld extends World
      */
     private void prepare()
     {
-        Bee bee =  new  Bee();
-        addObject(bee, 289, 199);
-        Bee bee2 =  new  Bee();
-        addObject(bee2, 485, 119);
-        Bee bee3 =  new  Bee();
-        addObject(bee3, 90, 297);
+        devil devil =  new  devil();
+        addObject(devil, 111, 288);
+        wizcat wizcat =  new  wizcat();
+        addObject(wizcat, 485, 270);
     }
 }
