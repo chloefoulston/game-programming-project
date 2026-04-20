@@ -26,7 +26,7 @@ That is: create the initial objects and add them to the world.</javadoc>
             <throws/>
             <body>
                 <variable type="devil" type-java="devil" name="devil" value="new devil()" value-java=" new devil()" enable="true"/>
-                <call expression="addObject(devil,111,288)" expression-java="addObject(devil, 111, 288)" enable="true"/>
+                <call expression="addObject(devil,111,270)" expression-java="addObject(devil, 111, 270)" enable="true"/>
                 <variable type="wizcat" type-java="wizcat" name="wizcat" value="new wizcat()" value-java=" new wizcat()" enable="true"/>
                 <call expression="addObject(wizcat,485,270)" expression-java="addObject(wizcat, 485, 270)" enable="true"/>
             </body>
