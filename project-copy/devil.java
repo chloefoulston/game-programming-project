@@ -13,6 +13,10 @@ public class devil extends Player
         rightImage=new GreenfootImage("devilRight.png");
         leftImage=new GreenfootImage("devilLeft.png");
         setImage(rightImage);
+        jumpButton = "w";
+        moveLeft = "a";
+        moveRight = "d";
+        
     }
     /**
      * Act - do whatever the devil wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.

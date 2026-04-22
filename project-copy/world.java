@@ -24,9 +24,9 @@ public class world extends World
      */
     private void prepare()
     {
-        devil devil =  new  devil();
+        devil devil =  new devil();
         addObject(devil, 111, 270);
-        wizcat wizcat =  new  wizcat();
+        wizcat wizcat =  new wizcat();
         addObject(wizcat, 485, 270);
     }
 }
