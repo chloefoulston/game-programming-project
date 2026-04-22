@@ -29,11 +29,11 @@ public class devil extends Player
     }
     public void move()
     {
-        if (Greenfoot.isKeyDown("a")) {
+        if (Greenfoot.isKeyDown(moveLeft)) {
             setImage(leftImage);
             move(-5);
         }
-        if (Greenfoot.isKeyDown("d")) {
+        if (Greenfoot.isKeyDown(moveRight)) {
             setImage(rightImage);
             move(5);
         }
