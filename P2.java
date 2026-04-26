@@ -5,10 +5,9 @@ import greenfoot.*;
 /**
  * 
  */
-public class wizcat extends Player
+public class P2 extends Player
 {
-    
-    public wizcat()
+    public P2()
     {
         rightImage=new GreenfootImage("wizRight.png");
         leftImage=new GreenfootImage("wizLeft.png");
@@ -19,10 +18,6 @@ public class wizcat extends Player
      */
     public void act()
     {
-        jumpButton = "up";
-        moveLeft = "left";
-        moveRight = "right";
-        
         move();
         applyGravity();
         jump();
@@ -30,11 +25,11 @@ public class wizcat extends Player
     }
     public void move()
     {
-        if (Greenfoot.isKeyDown(moveLeft)) {
+        if (Greenfoot.isKeyDown("left")) {
             setImage(leftImage);
             move(-5);
         }
-        if (Greenfoot.isKeyDown(moveRight)) {
+        if (Greenfoot.isKeyDown("right")) {
             setImage(rightImage);
             move(5);
         }

@@ -5,10 +5,9 @@ import greenfoot.*;
 /**
  * 
  */
-public class devil extends Player
+public class P1 extends Player
 {
-    
-    public devil()
+    public P1()
     {
         rightImage=new GreenfootImage("devilRight.png");
         leftImage=new GreenfootImage("devilLeft.png");
