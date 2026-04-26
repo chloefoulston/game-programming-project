@@ -19,12 +19,13 @@ public class wizcat extends Player
      */
     public void act()
     {
-        move();
-        applyGravity();
-        jump();
         jumpButton = "up";
         moveLeft = "left";
         moveRight = "right";
+        
+        move();
+        applyGravity();
+        jump();
         
     }
     public void move()
