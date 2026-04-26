@@ -22,18 +22,16 @@ public class wizcat extends Player
         move();
         applyGravity();
         jump();
-        jumpButton = "up";
-        moveLeft = "left";
-        moveRight = "right";
+        
         
     }
     public void move()
     {
-        if (Greenfoot.isKeyDown(moveLeft)) {
+        if (Greenfoot.isKeyDown("left")) {
             setImage(leftImage);
             move(-5);
         }
-        if (Greenfoot.isKeyDown(moveRight)) {
+        if (Greenfoot.isKeyDown("right")) {
             setImage(rightImage);
             move(5);
         }

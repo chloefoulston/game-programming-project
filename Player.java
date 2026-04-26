@@ -14,9 +14,7 @@ public class Player extends Actor
     protected int jumpPower = -15;
     protected int ground = 270;
     protected int health = 100;
-    protected String jumpButton;
-    protected String moveLeft;
-    protected String moveRight;  
+      
     protected String attack;
     protected String specialAbility;
     /**

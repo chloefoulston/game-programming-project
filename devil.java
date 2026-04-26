@@ -13,9 +13,7 @@ public class devil extends Player
         rightImage=new GreenfootImage("devilRight.png");
         leftImage=new GreenfootImage("devilLeft.png");
         setImage(rightImage);
-        jumpButton = "w";
-        moveLeft = "a";
-        moveRight = "d";
+        attack = "s";
         
     }
     /**
@@ -29,11 +27,11 @@ public class devil extends Player
     }
     public void move()
     {
-        if (Greenfoot.isKeyDown(moveLeft)) {
+        if (Greenfoot.isKeyDown("a")) {
             setImage(leftImage);
             move(-5);
         }
-        if (Greenfoot.isKeyDown(moveRight)) {
+        if (Greenfoot.isKeyDown("d")) {
             setImage(rightImage);
             move(5);
         }
