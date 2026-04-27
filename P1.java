@@ -1,4 +1,3 @@
-// WARNING: This file is auto-generated and any changes to it will be overwritten
 import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
@@ -8,6 +7,8 @@ import greenfoot.*;
  */
 public class P1 extends Player
 {
+
+    /* WARNING: This file is auto-generated and any changes to it will be overwritten*/
 
     /**
      * 
@@ -30,8 +31,8 @@ public class P1 extends Player
         move();
         applyGravity();
         jump();
-        takeDamage();
-    }
+        takeDamage();            
+        }
 
     /**
      * 
@@ -63,10 +64,12 @@ public class P1 extends Player
      */
     public void attack()
     {
-        Actor P1 = getOneIntersectingObject(P2.class);
-        if (P2!=null && Greenfoot.isKeyDown("s")){
-            P2.takeDamage();
+        Actor other = getOneIntersectingObject(Player.class);
+        if(other != null && Greenfoot.isKeyDown("s")){
+            Player enemy = (Player) other;
+            enemy.takeDamage();
+            
         }
-
     }
-}
+} 
+

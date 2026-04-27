@@ -43,4 +43,13 @@ public class P2 extends Player
             vSpeed=jumpPower;
         }
     }
+    public void attack()
+    {
+        Actor other = getOneIntersectingObject(Player.class);
+        if(other != null && Greenfoot.isKeyDown("down")){
+            Player enemy = (Player) other;
+            enemy.takeDamage();
+            
+        }
+    }
 }
