@@ -10,7 +10,7 @@
         <variable access="protected" type="int" type-java="int" name="health" value="4" value-java="4" enable="true"/>
         <variable access="protected" type="int" type-java="int" name="healthBarWidth" value="80" value-java="80" enable="true"/>
         <variable access="protected" type="int" type-java="int" name="healthBarHeight" value="15" value-java="15" enable="true"/>
-        <variable access="protected" type="int" type-java="int" name="pixelsPerHealthPoint" value="( int ) healthBarWidth / health" value-java="( int ) healthBarWidth / health" enable="true"/>
+        <variable access="protected" type="int" type-java="int" name="pixelsPerHealthPoint" value="(int)healthBarWidth/health" value-java="(int)healthBarWidth / health" enable="true"/>
     </fields>
     <constructors>
         <constructor access="public" enable="true">
@@ -18,7 +18,7 @@
             <params/>
             <throws/>
             <body>
-                <call expression="update ( )" expression-java="update ( )" enable="true"/>
+                <call expression="update()" expression-java="update()" enable="true"/>
             </body>
         </constructor>
     </constructors>
@@ -28,7 +28,7 @@
             <params/>
             <throws/>
             <body>
-                <call expression="update ( )" expression-java="update ( )" enable="true"/>
+                <call expression="update()" expression-java="update()" enable="true"/>
             </body>
         </method>
         <method access="public" type="void" type-java="void" name="update" enable="true">
@@ -36,12 +36,12 @@
             <params/>
             <throws/>
             <body>
-                <call expression="setImage ( new GreenfootImage ( healthBarWidth + 2 , healthBarHeight + 2 ) )" expression-java="setImage ( new GreenfootImage ( healthBarWidth + 2 , healthBarHeight + 2 ) )" enable="true"/>
-                <variable type="GreenfootImage" type-java="GreenfootImage" name="myImage" value="getImage ( )" value-java="getImage ( )" enable="true"/>
-                <call expression="myImage . setColor ( Color . WHITE )" expression-java="myImage . setColor ( Color . WHITE )" enable="true"/>
-                <call expression="myImage . drawRect ( 0 , 0 , healthBarWidth + 1 , healthBarHeight + 1 )" expression-java="myImage . drawRect ( 0 , 0 , healthBarWidth + 1 , healthBarHeight + 1 )" enable="true"/>
-                <call expression="myImage . setColor ( Color . RED )" expression-java="myImage . setColor ( Color . RED )" enable="true"/>
-                <call expression="myImage . fillRect ( 1 , 1 , health * pixelsPerHealthPoint , healthBarHeight )" expression-java="myImage . fillRect ( 1 , 1 , health * pixelsPerHealthPoint , healthBarHeight )" enable="true"/>
+                <call expression="setImage(new GreenfootImage(healthBarWidth+2,healthBarHeight+2))" expression-java="setImage( new GreenfootImage(healthBarWidth + 2, healthBarHeight + 2))" enable="true"/>
+                <variable type="GreenfootImage" type-java="GreenfootImage" name="myImage" value="getImage()" value-java="getImage()" enable="true"/>
+                <call expression="myImage.setColor(Color.WHITE)" expression-java="myImage.setColor(Color.WHITE)" enable="true"/>
+                <call expression="myImage.drawRect(0,0,healthBarWidth+1,healthBarHeight+1)" expression-java="myImage.drawRect(0, 0, healthBarWidth + 1, healthBarHeight + 1)" enable="true"/>
+                <call expression="myImage.setColor(Color.RED)" expression-java="myImage.setColor(Color.RED)" enable="true"/>
+                <call expression="myImage.fillRect(1,1,health*pixelsPerHealthPoint,healthBarHeight)" expression-java="myImage.fillRect(1, 1, health * pixelsPerHealthPoint, healthBarHeight)" enable="true"/>
             </body>
         </method>
         <method access="public" type="void" type-java="void" name="loseHealth" enable="true">
@@ -49,7 +49,7 @@
             <params/>
             <throws/>
             <body>
-                <assign dest="health" dest-java="health" src="health - 1" src-java="health - 1" enable="true"/>
+                <assign dest="health" dest-java="health" src="health-1" src-java="health - 1" enable="true"/>
             </body>
         </method>
     </methods>
