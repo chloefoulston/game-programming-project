@@ -1,3 +1,4 @@
+// WARNING: This file is auto-generated and any changes to it will be overwritten
 import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
@@ -6,17 +7,21 @@ import greenfoot.*;
  * 
  */
 public class P1 extends Player
-{    
+{
+
+    /**
+     * 
+     */
     public P1()
     {
-        rightImage = new GreenfootImage("dev-RIGHT.png");
-        leftImage=new GreenfootImage("dev-Left.png");
-        attackRight = new GreenfootImage("dev-ATT-RIGHT.png");
-        attackLeft = new GreenfootImage("dev-ATT-LEFR.png");
+        rightImage =  new  GreenfootImage("dev-RIGHT.png");
+        leftImage =  new  GreenfootImage("dev-LEFT.png");
+        attackRight =  new  GreenfootImage("dev-ATT-RIGHT.png");
+        attackLeft =  new  GreenfootImage("dev-ATT-LEFT.png");
         setImage(rightImage);
         attack = "s";
-        
     }
+
     /**
      * Act - do whatever the devil wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
@@ -25,7 +30,12 @@ public class P1 extends Player
         move();
         applyGravity();
         jump();
+        takeDamage();
     }
+
+    /**
+     * 
+     */
     public void move()
     {
         if (Greenfoot.isKeyDown("a")) {
@@ -37,10 +47,21 @@ public class P1 extends Player
             move(5);
         }
     }
+
+    /**
+     * 
+     */
     public void jump()
     {
-        if (Greenfoot.isKeyDown("w") && getY()>=vSpeed && getY()== 270) {
-            vSpeed=jumpPower;
+        if (Greenfoot.isKeyDown("w") && getY() >= vSpeed && getY() == 270) {
+            vSpeed = jumpPower;
         }
+    }
+
+    /**
+     * 
+     */
+    public void attack()
+    {
     }
 }

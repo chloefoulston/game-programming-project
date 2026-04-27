@@ -14,7 +14,7 @@
             <params/>
             <throws/>
             <body>
-                <if condition="Greenfoot.mouseClicked(this)" condition-java="Greenfoot.mouseClicked(this)" enable="true">
+                <if condition="Greenfoot.mousePressed(this)" condition-java="Greenfoot.mousePressed(this)" enable="true">
                     <ifStatements>
                         <call expression="Greenfoot.playSound(&quot;Cloud Click.wav&quot;)" expression-java="Greenfoot.playSound(&quot;Cloud Click.wav&quot;)" enable="true"/>
                         <call expression="Greenfoot.setWorld(new world())" expression-java="Greenfoot.setWorld( new world())" enable="true"/>

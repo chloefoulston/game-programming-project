@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="P1" extends="Player" extends-java="Player" enable="true" strideversion="1">
+    <javadoc xml:space="preserve"/>
+    <imports>
+        <import target="java.util.*" enable="true"/>
+        <import target="greenfoot.*" enable="true"/>
+    </imports>
+    <implements/>
+    <fields/>
+    <constructors>
+        <constructor access="public" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <assign dest="rightImage" dest-java="rightImage" src="new GreenfootImage(&quot;dev-RIGHT.png&quot;)" src-java=" new GreenfootImage(&quot;dev-RIGHT.png&quot;)" enable="true"/>
+                <assign dest="leftImage" dest-java="leftImage" src="new GreenfootImage(&quot;dev-LEFT.png&quot;)" src-java=" new GreenfootImage(&quot;dev-LEFT.png&quot;)" enable="true"/>
+                <assign dest="attackRight" dest-java="attackRight" src="new GreenfootImage(&quot;dev-ATT-RIGHT.png&quot;)" src-java=" new GreenfootImage(&quot;dev-ATT-RIGHT.png&quot;)" enable="true"/>
+                <assign dest="attackLeft" dest-java="attackLeft" src="new GreenfootImage(&quot;dev-ATT-LEFT.png&quot;)" src-java=" new GreenfootImage(&quot;dev-ATT-LEFT.png&quot;)" enable="true"/>
+                <call expression="setImage(rightImage)" expression-java="setImage(rightImage)" enable="true"/>
+                <assign dest="attack" dest-java="attack" src="&quot;s&quot;" src-java="&quot;s&quot;" enable="true"/>
+            </body>
+        </constructor>
+    </constructors>
+    <methods>
+        <method access="public" type="void" type-java="void" name="act" enable="true">
+            <javadoc xml:space="preserve">Act - do whatever the devil wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <call expression="move()" expression-java="move()" enable="true"/>
+                <call expression="applyGravity()" expression-java="applyGravity()" enable="true"/>
+                <call expression="jump()" expression-java="jump()" enable="true"/>
+                <call expression="takeDamage()" expression-java="takeDamage()" enable="true"/>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="move" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <if condition="Greenfoot.isKeyDown(&quot;a&quot;)" condition-java="Greenfoot.isKeyDown(&quot;a&quot;)" enable="true">
+                    <ifStatements>
+                        <call expression="setImage(leftImage)" expression-java="setImage(leftImage)" enable="true"/>
+                        <call expression="move(-5)" expression-java="move(-5)" enable="true"/>
+                    </ifStatements>
+                </if>
+                <if condition="Greenfoot.isKeyDown(&quot;d&quot;)" condition-java="Greenfoot.isKeyDown(&quot;d&quot;)" enable="true">
+                    <ifStatements>
+                        <call expression="setImage(rightImage)" expression-java="setImage(rightImage)" enable="true"/>
+                        <call expression="move(5)" expression-java="move(5)" enable="true"/>
+                    </ifStatements>
+                </if>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="jump" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <if condition="Greenfoot.isKeyDown(&quot;w&quot;)&amp;&amp;getY()&gt;=vSpeed&amp;&amp;getY()==270" condition-java="Greenfoot.isKeyDown(&quot;w&quot;) &amp;&amp; getY() &gt;= vSpeed &amp;&amp; getY() == 270" enable="true">
+                    <ifStatements>
+                        <assign dest="vSpeed" dest-java="vSpeed" src="jumpPower" src-java="jumpPower" enable="true"/>
+                    </ifStatements>
+                </if>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="attack" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body/>
+        </method>
+    </methods>
+</class>

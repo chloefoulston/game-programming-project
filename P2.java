@@ -9,8 +9,10 @@ public class P2 extends Player
 {
     public P2()
     {
-        rightImage=new GreenfootImage("wizRight.png");
-        leftImage=new GreenfootImage("wizLeft.png");
+        rightImage = new GreenfootImage("wiz-RIGHT.png");
+        leftImage=new GreenfootImage("wiz-LEFT.png");
+        attackRight = new GreenfootImage("wiz-ATT-RIGHT.png");
+        attackLeft = new GreenfootImage("wiz-ATT-LEFT.png");
         setImage(leftImage);
     }
     /**
@@ -21,6 +23,7 @@ public class P2 extends Player
         move();
         applyGravity();
         jump();
+        takeDamage();
         
     }
     public void move()

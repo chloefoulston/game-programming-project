@@ -11,18 +11,28 @@ public class Player extends Actor
     protected GreenfootImage leftImage;
     protected GreenfootImage attackRight;
     protected GreenfootImage attackLeft;
-    protected int vSpeed = 4;
-    protected final int GRAVITY = 1;
-    protected int jumpPower = -15;
-    protected int ground = 270;
+    protected static final int MAX_HEALTH = 100;
     protected int health = 100;
-      
+    protected final int GRAVITY = 1;
+    protected int vSpeed = 4;
+    protected int jumpPower = -15;
+    protected int ground = 270;      
     protected String attack;
     protected String specialAbility;
     /**
      * Act - do whatever the Player wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
+    {
+        move();
+        applyGravity();
+        jump();
+        takeDamage();
+    }
+    public void move()
+    {
+    }
+    public void jump()
     {
     }
     public void applyGravity()
@@ -35,5 +45,13 @@ public class Player extends Actor
             setLocation(getX(), ground);
             vSpeed = 0;
         }
+    }
+    public void takeDamage()
+    {
+        health = health-10;        
+    }
+    public void attack()
+    {
+        
     }
 }
