@@ -23,8 +23,7 @@ public class P2 extends Player
         move();
         applyGravity();
         jump();
-        takeDamage();
-        
+        attack();
     }
     public void move()
     {
@@ -45,11 +44,16 @@ public class P2 extends Player
     }
     public void attack()
     {
-        Actor other = getOneIntersectingObject(Player.class);
-        if(other != null && Greenfoot.isKeyDown("down")){
-            Player enemy = (Player) other;
-            enemy.takeDamage();
-            
+        if (Greenfoot.isKeyDown("down")){
+            Player enemy = (Player)getOneIntersectingObject(Player.class);
+            if(enemy != null){
+                enemy.takeDamage(10);
+            }
         }
     }
-}
+    public void takeDamage(int amount)
+    {
+        health -= amount;        
+    }
+    }
+

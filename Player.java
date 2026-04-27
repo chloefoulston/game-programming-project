@@ -13,6 +13,7 @@ public class Player extends Actor
     protected GreenfootImage attackLeft;
     protected static final int MAX_HEALTH = 100;
     protected int health = 100;
+    
     protected final int GRAVITY = 1;
     protected int vSpeed = 4;
     protected int jumpPower = -15;
@@ -27,7 +28,7 @@ public class Player extends Actor
         move();
         applyGravity();
         jump();
-        takeDamage();
+        
     }
     public void move()
     {
@@ -46,9 +47,9 @@ public class Player extends Actor
             vSpeed = 0;
         }
     }
-    public void takeDamage()
+    public void takeDamage(int amount)
     {
-        health = health-10;        
+        health -= amount;        
     }
     public void attack()
     {

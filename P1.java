@@ -31,8 +31,8 @@ public class P1 extends Player
         move();
         applyGravity();
         jump();
-        takeDamage();            
-        }
+        attack();
+    }
 
     /**
      * 
@@ -58,17 +58,20 @@ public class P1 extends Player
             vSpeed = jumpPower;
         }
     }
-
+    public void takeDamage(int amount)
+    {
+        health -= amount;        
+    }
     /**
      * 
      */
     public void attack()
     {
-        Actor other = getOneIntersectingObject(Player.class);
-        if(other != null && Greenfoot.isKeyDown("s")){
-            Player enemy = (Player) other;
-            enemy.takeDamage();
-            
+        if (Greenfoot.isKeyDown("s")){
+            Player enemy = (Player)getOneIntersectingObject(Player.class);
+            if(enemy != null){
+                enemy.takeDamage(10);
+            }
         }
     }
 } 
