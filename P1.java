@@ -6,11 +6,13 @@ import greenfoot.*;
  * 
  */
 public class P1 extends Player
-{
+{    
     public P1()
     {
-        rightImage=new GreenfootImage("devilRight.png");
-        leftImage=new GreenfootImage("devilLeft.png");
+        rightImage = new GreenfootImage("dev-RIGHT.png");
+        leftImage=new GreenfootImage("dev-Left.png");
+        attackRight = new GreenfootImage("dev-ATT-RIGHT.png");
+        attackLeft = new GreenfootImage("dev-ATT-LEFR.png");
         setImage(rightImage);
         attack = "s";
         
