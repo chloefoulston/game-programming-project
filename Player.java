@@ -9,6 +9,8 @@ public class Player extends Actor
 {
     protected GreenfootImage rightImage;
     protected GreenfootImage leftImage;
+    protected GreenfootImage attackRight;
+    protected GreenfootImage attackLeft;
     protected int vSpeed = 4;
     protected final int GRAVITY = 1;
     protected int jumpPower = -15;
