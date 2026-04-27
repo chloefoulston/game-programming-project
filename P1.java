@@ -63,5 +63,10 @@ public class P1 extends Player
      */
     public void attack()
     {
+        Actor P1 = getOneIntersectingObject(P2.class);
+        if (P2!=null && Greenfoot.isKeyDown("s")){
+            P2.takeDamage();
+        }
+
     }
 }
