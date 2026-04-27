@@ -11,31 +11,33 @@ public class P2 extends Player
     {
         rightImage = new GreenfootImage("wiz-RIGHT.png");
         leftImage=new GreenfootImage("wiz-LEFT.png");
-        attackRight = new GreenfootImage("wiz-ATT-RIGHT.png");
-        attackLeft = new GreenfootImage("wiz-ATT-LEFT.png");
+        attackRight = new GreenfootImage("wATR.png");
+        attackLeft = new GreenfootImage("wATL.png");
         setImage(leftImage);
+        facing = "left";
     }
     /**
      * Act - do whatever the wizcat wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
-        move();
-        applyGravity();
-        jump();
-        attack();
+        super.act();
+        
     }
     public void move()
     {
         if (Greenfoot.isKeyDown("left")) {
             setImage(leftImage);
+            facing = "left";
             move(-5);
         }
         if (Greenfoot.isKeyDown("right")) {
             setImage(rightImage);
+            facing = "right";
             move(5);
         }
     }
+   
     public void jump()
     {
         if (Greenfoot.isKeyDown("up") && getY()>=vSpeed && getY()== 270) {
@@ -44,16 +46,30 @@ public class P2 extends Player
     }
     public void attack()
     {
-        if (Greenfoot.isKeyDown("down")){
+        while (Greenfoot.isKeyDown("down")&& coolDown == 0){
+            fightingImage();
             Player enemy = (Player)getOneIntersectingObject(Player.class);
+            
             if(enemy != null){
                 enemy.takeDamage(10);
+                coolDown=80;
             }
         }
     }
+    public void fightingImage()
+    {
+        if (facing == "left"){
+            setImage(attackLeft);
+            facing = "left";
+        }else{
+            setImage(attackRight);
+            facing = ("right");
+        }
+    }
+
     public void takeDamage(int amount)
     {
         health -= amount;        
     }
-    }
+}
 

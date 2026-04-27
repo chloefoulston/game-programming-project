@@ -8,7 +8,6 @@ import greenfoot.*;
 public class P1 extends Player
 {
 
-    /* WARNING: This file is auto-generated and any changes to it will be overwritten*/
 
     /**
      * 
@@ -28,10 +27,7 @@ public class P1 extends Player
      */
     public void act()
     {
-        move();
-        applyGravity();
-        jump();
-        attack();
+       super.act(); 
     }
 
     /**
@@ -48,7 +44,7 @@ public class P1 extends Player
             move(5);
         }
     }
-
+    
     /**
      * 
      */
@@ -67,10 +63,12 @@ public class P1 extends Player
      */
     public void attack()
     {
-        if (Greenfoot.isKeyDown("s")){
+               
+        if (Greenfoot.isKeyDown("s")&& coolDown == 0){
             Player enemy = (Player)getOneIntersectingObject(Player.class);
             if(enemy != null){
                 enemy.takeDamage(10);
+                coolDown=80;
             }
         }
     }
