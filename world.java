@@ -24,9 +24,10 @@ public class world extends World
      */
     private void prepare()
     {
-        P1 devil =  new P1();
-        addObject(devil, 111, 270);
         P2 wizcat =  new P2();
         addObject(wizcat, 485, 270);
+        P1 devil =  new P1();
+        addObject(devil, 111, 270);
+        
     }
 }

@@ -32,6 +32,7 @@ public class Player extends Actor
         applyGravity();
         jump();
         
+        
         if ((coolDown > 0)){
             coolDown --;
             
@@ -45,7 +46,28 @@ public class Player extends Actor
     public void jump()
     {
     }
-
+    public String getDirection()
+    {
+        return facing;
+    }
+    public void walkingImage()
+    {
+        if(getDirection().equals("left")){
+            setImage(leftImage);
+        }
+        if(getDirection().equals("right")){
+            setImage(rightImage);
+        }        
+    }
+    public void fightingImage()
+    {
+        if(getDirection().equals("left")){
+            setImage(attackLeft);
+        }
+        if(getDirection().equals("right")){
+            setImage(attackRight);
+        }
+    }
     public void applyGravity()
     {
         setLocation(getX(), getY() + vSpeed);

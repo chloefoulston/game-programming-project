@@ -27,17 +27,17 @@ public class P2 extends Player
     public void move()
     {
         if (Greenfoot.isKeyDown("left")) {
-            setImage(leftImage);
             facing = "left";
+            walkingImage();
             move(-5);
         }
         if (Greenfoot.isKeyDown("right")) {
-            setImage(rightImage);
             facing = "right";
+            walkingImage();
             move(5);
         }
     }
-   
+    
     public void jump()
     {
         if (Greenfoot.isKeyDown("up") && getY()>=vSpeed && getY()== 270) {
@@ -55,17 +55,9 @@ public class P2 extends Player
                 coolDown=80;
             }
         }
+        
     }
-    public void fightingImage()
-    {
-        if (facing == "left"){
-            setImage(attackLeft);
-            facing = "left";
-        }else{
-            setImage(attackRight);
-            facing = ("right");
-        }
-    }
+    
 
     public void takeDamage(int amount)
     {

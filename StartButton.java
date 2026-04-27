@@ -16,7 +16,7 @@ public class StartButton extends Actor
     {
         if (Greenfoot.mousePressed(this)) {
             Greenfoot.playSound("Cloud Click.wav");
-            Greenfoot.setWorld( new world());
+            Greenfoot.setWorld( new  world());
         }
     }
 }
