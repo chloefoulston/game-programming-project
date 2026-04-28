@@ -1,17 +1,17 @@
 #BlueJ class context
 comment0.target=HealthBar
-comment0.text=\n\ \n
+comment0.text=\r\n\ \r\n
 comment1.params=max
 comment1.target=HealthBar(int)
-comment1.text=\n\ Act\ -\ do\ whatever\ the\ HealthBar\ wants\ to\ do.\ This\ method\ is\ called\ whenever\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ HealthBar\ wants\ to\ do.\ This\ method\ is\ called\ whenever\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\n\ \n
+comment2.text=\r\n\ \r\n
 comment3.params=amount
 comment3.target=void\ loseHealth(int)
 comment4.params=amount
 comment4.target=void\ gainHealth(int)
 comment5.params=
 comment5.target=void\ update()
-comment5.text=\n\ \n
+comment5.text=\r\n\ \r\n
 numComments=6

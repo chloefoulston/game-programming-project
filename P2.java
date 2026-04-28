@@ -24,12 +24,10 @@ public class P2 extends Player
     public void act()
     {
         super.act();
-        
         if(Greenfoot.isKeyDown("down")){
             takeDamage();
             
         }
-        
     }
     public void move()
     {
@@ -64,15 +62,12 @@ public class P2 extends Player
                 coolDown=80;
             }
         }
-        
     }
-    
 
     public void takeDamage()
     {
        world w =(world)getWorld();
         w.getHealthBar2().loseHealth(10);
     }
-
 }
 

@@ -24,8 +24,6 @@ public class P1 extends Player
     public void act()
     {
        super.act(); 
-       
-       
        if(Greenfoot.isKeyDown("s")){
            takeDamage();
        }
@@ -60,12 +58,9 @@ public class P1 extends Player
             Player enemy = (Player)getOneIntersectingObject(Player.class);
             
             if(enemy != null){
-                
                 Greenfoot.playSound("punch.mp3");
-                
-                coolDown=80;
-        }
-            
+                coolDown=80;   
+            }
         }
     }
     

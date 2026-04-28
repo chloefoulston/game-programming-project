@@ -38,8 +38,11 @@ public class startWorld extends World
     {
         StartButton startButton =  new  StartButton();
         addObject(startButton, 293, 114);
-        
+
+        startButton.setLocation(298,116);
+        startButton.setLocation(301,132);
     }
+
     public void stopped()
     {    
         bgMusic.pause();
