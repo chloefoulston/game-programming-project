@@ -7,6 +7,7 @@ import greenfoot.*;
  */
 public class P2 extends Player
 {
+    private HealthBar healthBar;
     public P2()
     {
         rightImage = new GreenfootImage("wiz-RIGHT.png");
@@ -15,6 +16,7 @@ public class P2 extends Player
         attackLeft = new GreenfootImage("wATL.png");
         setImage(leftImage);
         facing = "left";
+        healthBar = new HealthBar(100);
     }
     /**
      * Act - do whatever the wizcat wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
@@ -22,6 +24,11 @@ public class P2 extends Player
     public void act()
     {
         super.act();
+        
+        if(Greenfoot.isKeyDown("down")){
+            takeDamage();
+            
+        }
         
     }
     public void move()
@@ -42,6 +49,7 @@ public class P2 extends Player
     {
         if (Greenfoot.isKeyDown("up") && getY()>=vSpeed && getY()== 270) {
             vSpeed=jumpPower;
+            Greenfoot.playSound("jump.mp3");
         }
     }
     public void attack()
@@ -51,7 +59,8 @@ public class P2 extends Player
             Player enemy = (Player)getOneIntersectingObject(Player.class);
             
             if(enemy != null){
-                enemy.takeDamage(10);
+                Greenfoot.playSound("wand.mp3");
+                
                 coolDown=80;
             }
         }
@@ -59,9 +68,11 @@ public class P2 extends Player
     }
     
 
-    public void takeDamage(int amount)
+    public void takeDamage()
     {
-        health -= amount;        
+       world w =(world)getWorld();
+        w.getHealthBar2().loseHealth(10);
     }
+
 }
 

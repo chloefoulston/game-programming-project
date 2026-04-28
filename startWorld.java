@@ -10,6 +10,8 @@ public class startWorld extends World
 
     /* (World, Actor, GreenfootImage, Greenfoot and MouseInfo)*/
     private GreenfootImage startButton;
+    private GreenfootSound bgMusic = new GreenfootSound("startWorld.mp3");
+    
     /**
      * Constructor for objects of class startWorld.
      */
@@ -17,6 +19,15 @@ public class startWorld extends World
     {
         super(600, 400, 1);      
         prepare();
+        
+    
+    }
+    public GreenfootSound getMusic(){
+        return bgMusic;
+    }
+    public void started()
+    {
+        bgMusic.playLoop();
     }
 
     /**
@@ -27,5 +38,11 @@ public class startWorld extends World
     {
         StartButton startButton =  new  StartButton();
         addObject(startButton, 293, 114);
+        
     }
+    public void stopped()
+    {    
+        bgMusic.pause();
+    }
+
 }

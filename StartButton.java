@@ -1,4 +1,3 @@
-// WARNING: This file is auto-generated and any changes to it will be overwritten
 import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
@@ -15,8 +14,11 @@ public class StartButton extends Actor
     public void act()
     {
         if (Greenfoot.mousePressed(this)) {
+            startWorld start = (startWorld)getWorld();
+            start.getMusic().stop();
             Greenfoot.playSound("Cloud Click.wav");
             Greenfoot.setWorld( new  world());
         }
     }
+    
 }

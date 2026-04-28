@@ -7,6 +7,8 @@ import greenfoot.*;
  */
 public class P1 extends Player
 {
+    private HealthBar healthBar;
+    
     public P1()
     {
         rightImage =  new  GreenfootImage("dev-RIGHT.png");
@@ -15,12 +17,18 @@ public class P1 extends Player
         attackLeft =  new  GreenfootImage("dev-ATT-LEFT.png");
         setImage(rightImage);
         facing = "right";
+        healthBar = new HealthBar(100);
         
     }
 
     public void act()
     {
        super.act(); 
+       
+       
+       if(Greenfoot.isKeyDown("s")){
+           takeDamage();
+       }
     }
 
     public void move()
@@ -41,12 +49,8 @@ public class P1 extends Player
     {
         if (Greenfoot.isKeyDown("w") && getY() >= vSpeed && getY() == 270) {
             vSpeed = jumpPower;
+            Greenfoot.playSound("jump.mp3");
         }
-    }
-    
-    public void takeDamage(int amount)
-    {
-        health -= amount;        
     }
     
     public void attack()
@@ -56,10 +60,19 @@ public class P1 extends Player
             Player enemy = (Player)getOneIntersectingObject(Player.class);
             
             if(enemy != null){
-                enemy.takeDamage(10);
+                
+                Greenfoot.playSound("punch.mp3");
+                
                 coolDown=80;
-            }
         }
+            
+        }
+    }
+    
+    public void takeDamage()
+    {
+        world w = (world)getWorld();
+        w.getHealthBar1().loseHealth(10);
     }
 } 
 
