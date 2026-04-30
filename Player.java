@@ -31,8 +31,7 @@ public class Player extends Actor
         move();
         applyGravity();
         jump();
-        
-        
+               
         if ((coolDown > 0)){
             coolDown --;
             
