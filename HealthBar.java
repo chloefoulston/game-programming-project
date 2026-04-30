@@ -34,15 +34,18 @@ public class HealthBar extends Player
     public void loseHealth(int amount)
     {
         health -= amount;
-        if(health < 0) health = 0;
-        update();
+        if(health < 0) {
+            health = 0;
+            update();
+        }
     }
     public void gainHealth(int amount)
     {
         health += amount;
-        if(health > maxHealth) health = maxHealth;
-        update();
-        
+        if(health > maxHealth){
+            health = maxHealth;
+            update();
+        }
     }
 
     /**

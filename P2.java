@@ -24,10 +24,6 @@ public class P2 extends Player
     public void act()
     {
         super.act();
-        if(Greenfoot.isKeyDown("down")){
-            takeDamage();
-            
-        }
     }
     public void move()
     {
@@ -58,16 +54,13 @@ public class P2 extends Player
             
             if(enemy != null){
                 Greenfoot.playSound("wand.mp3");
-                
+                world w =(world)getWorld();
+                w.getHealthBar1().loseHealth(10);
                 coolDown=80;
             }
         }
     }
 
-    public void takeDamage()
-    {
-       world w =(world)getWorld();
-        w.getHealthBar2().loseHealth(10);
-    }
+    
 }
 
