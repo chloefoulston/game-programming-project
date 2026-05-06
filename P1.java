@@ -62,5 +62,11 @@ public class P1 extends Player
             }
         }
     }
+    public void lose()
+    {
+        if(health==0){
+            
+        }
+    }
 } 
 
