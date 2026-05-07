@@ -31,6 +31,7 @@ public class Player extends Actor
         move();
         applyGravity();
         jump();
+        checkHealth();
                
         if ((coolDown > 0)){
             coolDown --;
@@ -84,4 +85,21 @@ public class Player extends Actor
     }
     public void attack()
     {}
+    public void checkHealth()
+    {
+        List<HealthBar> bars = getWorld().getObjects(HealthBar.class);
+        
+        if (!bars.isEmpty()){
+            HealthBar hb = bars.get(0);
+            if(hb.getHealth() <= 0){
+                Greenfoot.setWorld(new endGameWorld());
+            }
+        }
+        
+    }
+    
+    public void loseHealth(int amount)
+    {
+        health -= amount;
+    }
 }

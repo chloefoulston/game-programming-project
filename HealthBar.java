@@ -34,11 +34,13 @@ public class HealthBar extends Player
     public void loseHealth(int amount)
     {
         health -= amount;
-        if(health < 0) {
-            health = 0;
-            update();
+        if(health <=  0) {
+            Greenfoot.playSound("lose.mp3");
+            Greenfoot.setWorld(new endGameWorld());
         }
+            update();
     }
+    
     public void gainHealth(int amount)
     {
         health += amount;
@@ -65,5 +67,17 @@ public class HealthBar extends Player
         
         img.fillRect(1, 1, healthWidth, barHeight);
         setImage(img);
+    }
+    public int getHealth()
+    {
+        return health;
+    }
+    public void checkHealth()
+    {
+        HealthBar hb = (HealthBar) getWorld().getObjects(HealthBar.class).get(0);
+    
+        if(hb.getHealth() <= 0) {
+            Greenfoot.setWorld(new endGameWorld());
+        }
     }
 }
