@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=Player
-comment0.text=\r\n\ \r\n
+comment0.text=\n\ \n
 comment1.params=
 comment1.target=void\ act()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Player\ wants\ to\ do.\ This\ method\ is\ called\ whenever\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment1.text=\n\ Act\ -\ do\ whatever\ the\ Player\ wants\ to\ do.\ This\ method\ is\ called\ whenever\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
 comment10.params=bar
 comment10.target=void\ setHealthBar(HealthBar)
 comment11.params=amount
@@ -24,10 +24,10 @@ comment4.params=
 comment4.target=void\ attack()
 comment5.params=
 comment5.target=java.lang.String\ getDirection()
-comment5.text=\r\n\ getDirection\ -\ returns\ the\ direction\ the\ player\ is\ facing\r\n
+comment5.text=\n\ getDirection\ -\ returns\ the\ direction\ the\ player\ is\ facing\n
 comment6.params=
 comment6.target=void\ applyGravity()
-comment6.text=\r\n\ applyGravity\ -\ applies\ gravity\ to\ the\ player\ to\ allow\ jumping\r\n
+comment6.text=\n\ applyGravity\ -\ applies\ gravity\ to\ the\ player\ to\ allow\ jumping\n
 comment7.params=
 comment7.target=boolean\ isOnGround()
 comment8.params=
