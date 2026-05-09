@@ -5,22 +5,27 @@ import greenfoot.*;
 /**
  * 
  */
-public class Player extends Actor
+public abstract class Player extends Actor
 {
     protected GreenfootImage rightImage = null;
     protected GreenfootImage leftImage = null;
     protected GreenfootImage attackRight = null;
     protected GreenfootImage attackLeft = null;
+    protected GreenfootImage dieRight = null;
+    protected GreenfootImage dieLeft = null;
+    protected String facing;
+    
     protected static final int MAX_HEALTH = 100;
-    protected int health = 100;
+    protected int health = MAX_HEALTH;
+    
     protected final int GRAVITY = 1;
     protected int vSpeed = 4;
     protected int jumpPower = -15;
-    protected int ground = 270;      
-    protected String attack = null;
-    protected String specialAbility;
+    protected int ground = 270;   
+    
     protected int coolDown = 0;
-    protected String facing;
+    protected HealthBar healthBar;
+    protected int endTimer = -1;
     
     /**
      * Act - do whatever the Player wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
@@ -31,43 +36,34 @@ public class Player extends Actor
         move();
         applyGravity();
         jump();
-        checkHealth();
-               
-        if ((coolDown > 0)){
-            coolDown --;
-            
-        }else{
-            attack();
+        attack();
+        reduceCooldown();
+        die();
+         if (endTimer > 0){
+            endTimer--;
+            if (endTimer == 0){
+            Greenfoot.setWorld(new endGameWorld());
+            }
+            return;
         }
     }
-    public void move()
-    {
-    }
-    public void jump()
-    {
-    }
+    public abstract void move();
+    
+    public abstract void jump();
+    
+    public abstract void attack();
+    
+    /**
+     * getDirection - returns the direction the player is facing
+     */
     public String getDirection()
     {
         return facing;
     }
-    public void walkingImage()
-    {
-        if(getDirection().equals("left")){
-            setImage(leftImage);
-        }
-        if(getDirection().equals("right")){
-            setImage(rightImage);
-        }        
-    }
-    public void fightingImage()
-    {
-        if(getDirection().equals("left")){
-            setImage(attackLeft);
-        }
-        if(getDirection().equals("right")){
-            setImage(attackRight);
-        }
-    }
+    
+    /**
+     * applyGravity - applies gravity to the player to allow jumping
+     */
     public void applyGravity()
     {
         setLocation(getX(), getY() + vSpeed);
@@ -79,27 +75,88 @@ public class Player extends Actor
             vSpeed = 0;
         }
     }
-    public void takeDamage(int amount)
-    {
-        health = health - amount;        
-    }
-    public void attack()
-    {}
-    public void checkHealth()
-    {
-        List<HealthBar> bars = getWorld().getObjects(HealthBar.class);
-        
-        if (!bars.isEmpty()){
-            HealthBar hb = bars.get(0);
-            if(hb.getHealth() <= 0){
-                Greenfoot.setWorld(new endGameWorld());
-            }
-        }
-        
+    
+    public boolean isOnGround(){
+        return getY() >= ground;
     }
     
-    public void loseHealth(int amount)
+    public int getHealth()
     {
-        health -= amount;
+        return health;
     }
+    
+    public void reduceCooldown()
+    {
+        if (coolDown > 0)
+        {
+            coolDown--;
+        }
+    }
+    
+    public void setHealthBar(HealthBar bar)
+    {
+        healthBar = bar;
+        healthBar.updateBar();
+    }
+    
+    public void takeDamage(int amount)
+    {
+        if (!isOnGround()){
+            return;
+        }
+    
+        health -= amount;
+        if (health < 0){
+            health = 0;
+        }
+
+        if (healthBar != null){
+            healthBar.updateBar();
+        }
+         if (health == 0)
+        {
+            deathImage();
+            getWorld().showText(getClass().getName() + " loses!", 300, 100);
+             endTimer = 180;
+        }
+    }
+    
+    
+    public void die()
+    {
+        if(health == 0){
+            deathImage();
+        }
+    }
+    
+    public void walkingImage()
+    {
+        if(getDirection().equals("left")){
+            setImage(leftImage);
+        }
+        if(getDirection().equals("right")){
+            setImage(rightImage);
+        }        
+    }
+    
+    public void fightingImage()
+    {
+        if(getDirection().equals("left")){
+            setImage(attackLeft);
+        }
+        if(getDirection().equals("right")){
+            setImage(attackRight);
+        }
+    }
+    
+    public void deathImage()
+    {
+        if(getDirection().equals("left")){
+            setImage(dieLeft);
+        }
+        if(getDirection().equals("right")){
+            setImage(dieRight);
+        }      
+    }
+   
 }

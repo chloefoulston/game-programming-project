@@ -15,10 +15,10 @@ public class P1 extends Player
         leftImage =  new  GreenfootImage("dev-LEFT.png");
         attackRight =  new  GreenfootImage("dev-ATT-RIGHT.png");
         attackLeft =  new  GreenfootImage("dev-ATT-LEFT.png");
+        dieLeft = new GreenfootImage("dev_deadLEFT.png");
+        dieRight = new GreenfootImage("dev_deadRIGHT.png");
         setImage(rightImage);
         facing = "right";
-        healthBar = new HealthBar(100);
-        
     }
 
     public void act()
@@ -56,17 +56,11 @@ public class P1 extends Player
             
             if(enemy != null){
                 Greenfoot.playSound("punch.mp3");
-                world w = (world)getWorld();
-                w.getHealthBar2().loseHealth(10);
-                coolDown=80;   
+                enemy.takeDamage(10);
+                coolDown=25;   
             }
         }
     }
-    public void lose()
-    {
-        if(health==0){
-            
-        }
-    }
+   
 } 
 

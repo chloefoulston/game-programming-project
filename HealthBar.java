@@ -5,79 +5,38 @@ import greenfoot.Color;
 /**
  * 
  */
-public class HealthBar extends Player
+public class HealthBar extends Actor
 {
-    protected int health;
-    protected int maxHealth;
-    protected int barWidth =100;
-    protected int barHeight = 15;
-    protected int pixelsPerHealthPoint;
-    
-    /**
-     * Act - do whatever the HealthBar wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public HealthBar(int max)
+    private Player player;
+
+    private int width = 150;
+    private int height = 20;
+
+    public HealthBar(Player trackedPlayer)
     {
-        maxHealth = max;
-        health = max;
-        pixelsPerHealthPoint = barWidth / maxHealth;
-        update();
+        player = trackedPlayer;
+        updateBar();
     }
 
-    /**
-     * 
-     */
-    public void act()
+    public void updateBar()
     {
-        update();
-    }
-    public void loseHealth(int amount)
-    {
-        health -= amount;
-        if(health <=  0) {
-            Greenfoot.playSound("lose.mp3");
-            Greenfoot.setWorld(new endGameWorld());
-        }
-            update();
-    }
-    
-    public void gainHealth(int amount)
-    {
-        health += amount;
-        if(health > maxHealth){
-            health = maxHealth;
-            update();
-        }
-    }
+        GreenfootImage image =
+        new GreenfootImage(width, height);
 
-    /**
-     * 
-     */
-    public void update()
-    {
-        GreenfootImage img = new GreenfootImage(barWidth + 2, barHeight + 2);
-        img.setColor(Color.BLACK);
-        img.drawRect(0, 0, barWidth + 1, barHeight + 1);
-        img.setColor(Color.GRAY);
-        
-        img.fillRect(1, 1, barWidth, barHeight);
-        
-        img.setColor(Color.RED);
-        int healthWidth = (int) ((double)health / maxHealth * barWidth);
-        
-        img.fillRect(1, 1, healthWidth, barHeight);
-        setImage(img);
-    }
-    public int getHealth()
-    {
-        return health;
-    }
-    public void checkHealth()
-    {
-        HealthBar hb = (HealthBar) getWorld().getObjects(HealthBar.class).get(0);
-    
-        if(hb.getHealth() <= 0) {
-            Greenfoot.setWorld(new endGameWorld());
-        }
+        image.setColor(Color.DARK_GRAY);
+        image.fillRect(0, 0, width, height);
+
+        image.setColor(Color.RED);
+
+        int healthWidth =
+        (int)((double)player.getHealth()
+        / Player.MAX_HEALTH * width);
+
+        image.fillRect(0, 0, healthWidth, height);
+
+        image.setColor(Color.WHITE);
+        image.drawRect(0, 0, width - 1, height - 1);
+
+        setImage(image);
     }
 }

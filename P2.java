@@ -14,9 +14,10 @@ public class P2 extends Player
         leftImage=new GreenfootImage("wiz-LEFT.png");
         attackRight = new GreenfootImage("wATR.png");
         attackLeft = new GreenfootImage("wATL.png");
+        
         setImage(leftImage);
         facing = "left";
-        healthBar = new HealthBar(100);
+        
     }
     /**
      * Act - do whatever the wizcat wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
@@ -54,9 +55,8 @@ public class P2 extends Player
             
             if(enemy != null){
                 Greenfoot.playSound("wand.mp3");
-                world w =(world)getWorld();
-                w.getHealthBar1().loseHealth(10);
-                coolDown=80;
+                enemy.takeDamage(10);
+                coolDown=25;  
             }
         }
     }
