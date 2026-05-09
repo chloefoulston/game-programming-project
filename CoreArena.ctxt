@@ -1,8 +1,8 @@
 #BlueJ class context
-comment0.target=world
+comment0.target=CoreArena
 comment0.text=\r\n\ \r\n
 comment1.params=
-comment1.target=world()
+comment1.target=CoreArena()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ world.\r\n
 comment2.params=
 comment2.target=void\ prepare()

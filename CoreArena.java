@@ -5,12 +5,12 @@ import greenfoot.*;
 /**
  * 
  */
-public class world extends World
+public class CoreArena extends World
 {    
     /**
      * Constructor for objects of class world.
      */
-    public world()
+    public CoreArena()
     {
         super(600, 400, 1);
         prepare();
