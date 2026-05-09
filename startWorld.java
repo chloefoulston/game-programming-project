@@ -7,8 +7,6 @@ import greenfoot.*;
  */
 public class startWorld extends World
 {
-
-    /* (World, Actor, GreenfootImage, Greenfoot and MouseInfo)*/
     private GreenfootImage startButton;
     private GreenfootSound bgMusic = new GreenfootSound("startWorld.mp3");
     
@@ -19,8 +17,6 @@ public class startWorld extends World
     {
         super(600, 400, 1);      
         prepare();
-        
-    
     }
     public GreenfootSound getMusic(){
         return bgMusic;
