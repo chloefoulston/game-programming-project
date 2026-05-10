@@ -10,14 +10,17 @@ public class P2 extends Player
     private HealthBar healthBar;
     public P2()
     {
-        rightImage = new GreenfootImage("wiz-RIGHT.png");
-        leftImage=new GreenfootImage("wiz-LEFT.png");
-        attackRight = new GreenfootImage("wATR.png");
-        attackLeft = new GreenfootImage("wATL.png");
-        dieLeft = new GreenfootImage("wDeadLEFT.png");
-        dieRight = new GreenfootImage("wDeadRIGHT.png");
-        specialLEFT = new GreenfootImage("wSPECIALATTLEFT.png");
-        specialRIGHT = new GreenfootImage("wSPECIALATTRIGHT.png");
+        rightImage =  new  GreenfootImage("P2moveRIGHT.png");
+        leftImage =  new  GreenfootImage("P2moveLEFT.png");
+        
+        attackRight =  new  GreenfootImage("P2atkRIGHT.png");
+        attackLeft =  new  GreenfootImage("P2atkLEFT.png");
+    
+        specialLEFT = new GreenfootImage("P2specialAtkLEFT.png");
+        specialRIGHT = new GreenfootImage("P2specialAtkRIGHT.png");
+        
+        dieLeft = new GreenfootImage("P2deadLEFT.png");
+        dieRight = new GreenfootImage("P2deadRIGHT.png");
 
 
         setImage(leftImage);

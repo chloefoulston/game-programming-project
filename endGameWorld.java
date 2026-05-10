@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class endGameWorld extends World
 {
+    private GreenfootSound bgMusic = new GreenfootSound("winner.wav");
     /**
      * Constructor for objects of class endGameWorld.
      * 
@@ -15,10 +16,10 @@ public class endGameWorld extends World
     public endGameWorld(String winner)
     {    
         super(600, 400, 1);
-        Greenfoot.playSound("winner.wav");
+        bgMusic.play();
         if (winner.equals("P1"))
         {
-            setBackground("devWin.png");
+            setBackground("P1win.png");
             P1.wins++;
             showText("PLAYER 1 WINS! You have won " + P1.wins + " battles", 295, 355);
              
@@ -27,7 +28,7 @@ public class endGameWorld extends World
         }
         else if (winner.equals("P2"))
         {
-            setBackground("wizWin.png");
+            setBackground("P2win.png");
             P2.wins++;
             showText("PLAYER 2 WINS! You have won " + P2.wins + " battles", 295, 355);
             showText("press space to play again", 295, 385);
@@ -39,7 +40,9 @@ public class endGameWorld extends World
     {
         if (Greenfoot.isKeyDown("space"))
         {
+            bgMusic.stop();
             Greenfoot.setWorld(new CoreArena());
+            
         }
     }
 }

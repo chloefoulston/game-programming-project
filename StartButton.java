@@ -17,7 +17,7 @@ public class StartButton extends Actor
             startWorld start = (startWorld)getWorld();
             start.getMusic().stop();
             Greenfoot.playSound("Cloud Click.wav");
-            Greenfoot.setWorld( new  CoreArena());
+            Greenfoot.setWorld(new CoreArena());
         }
     }
     

@@ -11,14 +11,18 @@ public class P1 extends Player
     
     public P1()
     {
-        rightImage =  new  GreenfootImage("dev-RIGHT.png");
-        leftImage =  new  GreenfootImage("dev-LEFT.png");
-        attackRight =  new  GreenfootImage("dev-ATT-RIGHT.png");
-        attackLeft =  new  GreenfootImage("dev-ATT-LEFT.png");
-        dieLeft = new GreenfootImage("dev_deadLEFT.png");
-        dieRight = new GreenfootImage("dev_deadRIGHT.png");
-        specialLEFT = new GreenfootImage("dev-SPECIALATTLEFT.png");
-        specialRIGHT = new GreenfootImage("dev-SPECIALATTRIGHT.png");
+        rightImage =  new  GreenfootImage("P1moveRIGHT.png");
+        leftImage =  new  GreenfootImage("P1moveLEFT.png");
+        
+        attackRight =  new  GreenfootImage("P1atkRIGHT.png");
+        attackLeft =  new  GreenfootImage("P1atkLEFT.png");
+    
+        specialLEFT = new GreenfootImage("P1specialAtkLEFT.png");
+        specialRIGHT = new GreenfootImage("P1specialAtkRIGHT.png");
+        
+        dieLeft = new GreenfootImage("P1deadLEFT.png");
+        dieRight = new GreenfootImage("P1deadRIGHT.png");
+        
         setImage(rightImage);
         facing = "right";
     }

@@ -1,10 +1,11 @@
 #Greenfoot project file
-class.CoreArena.image=cave.jpg
+class.CoreArena.image=core-arena.jpg
 class.P1.image=devilRight.png
 class.P2.image=wizLeft.png
+class.SplashScreen.image=splashScreen.png
 class.StartButton.image=start.png
 class.endGameWorld.image=space1.jpg
-class.startWorld.image=Untitled\ design.png
+class.startWorld.image=pixelDuelStart.png
 dependency1.from=endGameWorld
 dependency1.to=CoreArena
 dependency1.type=UsesDependency
