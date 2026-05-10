@@ -125,6 +125,7 @@ public abstract class Player extends Actor
             }
             deathImage();
             getWorld().showText(getClass().getName() + " loses!", 300, 100);
+            Greenfoot.playSound("lose.mp3");
             endTimer = 180;
         }
     }

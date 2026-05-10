@@ -15,7 +15,7 @@ public class endGameWorld extends World
     public endGameWorld(String winner)
     {    
         super(600, 400, 1);
-        
+        Greenfoot.playSound("winner.wav");
         if (winner.equals("P1"))
         {
             setBackground("devWin.png");
