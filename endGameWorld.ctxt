@@ -4,4 +4,6 @@ comment0.text=\r\n\ Write\ a\ description\ of\ class\ endGameWorld\ here.\r\n\ \
 comment1.params=winner
 comment1.target=endGameWorld(java.lang.String)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ endGameWorld.\r\n\ \r\n
-numComments=2
+comment2.params=
+comment2.target=void\ act()
+numComments=3
