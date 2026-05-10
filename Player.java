@@ -27,6 +27,7 @@ public abstract class Player extends Actor
     protected int coolDown = 0;
     protected HealthBar healthBar;
     protected int endTimer = -1;
+    protected static int wins;
     
     /**
      * Act - do whatever the Player wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
@@ -115,7 +116,7 @@ public abstract class Player extends Actor
         
          if (health == 0){
             if (this instanceof P1){
-            winner = "P2";
+            winner = "P2"; 
             }else if (this instanceof P2){
             winner = "P1";
             }
@@ -161,5 +162,8 @@ public abstract class Player extends Actor
             setImage(dieRight);
         }      
     }
-   
+    public void resetWins()
+    {
+        wins = 0;
+    }
 }

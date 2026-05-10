@@ -19,13 +19,17 @@ public class endGameWorld extends World
         if (winner.equals("P1"))
         {
             setBackground("devWin.png");
-            showText("PLAYER 1 WINS!", 295, 355);
+            P1.wins++;
+            showText("PLAYER 1 WINS! You have won " + P1.wins + " battles", 295, 355);
+             
+            
             showText("press space to play again", 295, 385);
         }
         else if (winner.equals("P2"))
         {
             setBackground("wizWin.png");
-            showText("PLAYER 2 WINS!", 295, 355);
+            P2.wins++;
+            showText("PLAYER 2 WINS! You have won " + P2.wins + " battles", 295, 355);
             showText("press space to play again", 295, 385);
         }
         
