@@ -36,7 +36,11 @@ public class HealthBar extends Actor
 
         image.setColor(Color.WHITE);
         image.drawRect(0, 0, width - 1, height - 1);
-
+         image.setColor(Color.WHITE);
+        image.drawString(
+        player.getHealth() + "/" + Player.MAX_HEALTH,
+        45,
+        15);
         setImage(image);
     }
 }

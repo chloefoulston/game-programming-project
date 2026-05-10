@@ -30,7 +30,7 @@ public abstract class Player extends Actor
     protected HealthBar healthBar;
     protected int endTimer = -1;
     protected static int wins;
-    
+    protected boolean canUseSpecial = false;
     /**
      * Act - do whatever the Player wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
@@ -41,6 +41,7 @@ public abstract class Player extends Actor
         applyGravity();
         jump();
         attack();
+        specialAttack();
         reduceCooldown();
         die();
          if (endTimer > 0){
@@ -56,7 +57,7 @@ public abstract class Player extends Actor
     public abstract void jump();
     
     public abstract void attack();
-    
+    public abstract void specialAttack();
     /**
      * getDirection - returns the direction the player is facing
      */
@@ -164,8 +165,38 @@ public abstract class Player extends Actor
             setImage(dieRight);
         }      
     }
+    public void specialAtkImage()
+    {
+        if(getDirection().equals("left")){
+            setImage(specialLEFT);
+        }
+        if(getDirection().equals("right")){
+            setImage(specialRIGHT);
+        }      
+        
+    }
     public void resetWins()
     {
         wins = 0;
+    }
+    public void canUseSpecial()
+    {
+        if (health <= 30){
+            canUseSpecial = true;
+        }else{
+            canUseSpecial = false;
+        }
+    }
+    public void heal(int amount)
+    {
+        health += amount;
+        if (health > MAX_HEALTH)
+        {
+            health = MAX_HEALTH;
+        }
+        if (healthBar != null)
+        {
+            healthBar.updateBar();
+        }
     }
 }

@@ -63,6 +63,20 @@ public class P1 extends Player
             }
         }
     }
+    public void specialAttack()
+    {
+        canUseSpecial();
+         if (Greenfoot.isKeyDown("q") && canUseSpecial){
+            specialAtkImage();
+            Player enemy = (Player)getOneIntersectingObject(Player.class);
+            
+            if(enemy != null){
+                Greenfoot.playSound("airAtk.wav");
+                heal(10);
+                enemy.takeDamage(20);  
+            }
+        }
+    }
    
 } 
 
