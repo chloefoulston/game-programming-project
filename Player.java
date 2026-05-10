@@ -14,6 +14,7 @@ public abstract class Player extends Actor
     protected GreenfootImage dieRight = null;
     protected GreenfootImage dieLeft = null;
     protected String facing;
+    protected String winner;
     
     protected static final int MAX_HEALTH = 100;
     protected int health = MAX_HEALTH;
@@ -42,7 +43,7 @@ public abstract class Player extends Actor
          if (endTimer > 0){
             endTimer--;
             if (endTimer == 0){
-            Greenfoot.setWorld(new endGameWorld());
+            Greenfoot.setWorld(new endGameWorld(winner));
             }
             return;
         }
@@ -104,23 +105,25 @@ public abstract class Player extends Actor
         if (!isOnGround()){
             return;
         }
-    
         health -= amount;
         if (health < 0){
             health = 0;
         }
-
         if (healthBar != null){
             healthBar.updateBar();
         }
-         if (health == 0)
-        {
+        
+         if (health == 0){
+            if (this instanceof P1){
+            winner = "P2";
+            }else if (this instanceof P2){
+            winner = "P1";
+            }
             deathImage();
             getWorld().showText(getClass().getName() + " loses!", 300, 100);
-             endTimer = 180;
+            endTimer = 180;
         }
     }
-    
     
     public void die()
     {
