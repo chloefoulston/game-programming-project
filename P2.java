@@ -16,6 +16,8 @@ public class P2 extends Player
         attackLeft = new GreenfootImage("wATL.png");
         dieLeft = new GreenfootImage("wDeadLEFT.png");
         dieRight = new GreenfootImage("wDeadRIGHT.png");
+        specialLEFT = new GreenfootImage("wSPECIALATTLEFT.png");
+        specialRIGHT = new GreenfootImage("wSPECIALATTRIGHT.png");
 
 
         setImage(leftImage);

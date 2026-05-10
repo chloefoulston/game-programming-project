@@ -17,6 +17,8 @@ public class P1 extends Player
         attackLeft =  new  GreenfootImage("dev-ATT-LEFT.png");
         dieLeft = new GreenfootImage("dev_deadLEFT.png");
         dieRight = new GreenfootImage("dev_deadRIGHT.png");
+        specialLEFT = new GreenfootImage("dev-SPECIALATTLEFT.png");
+        specialRIGHT = new GreenfootImage("dev-SPECIALATTRIGHT.png");
         setImage(rightImage);
         facing = "right";
     }

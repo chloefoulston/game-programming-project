@@ -13,6 +13,8 @@ public abstract class Player extends Actor
     protected GreenfootImage attackLeft = null;
     protected GreenfootImage dieRight = null;
     protected GreenfootImage dieLeft = null;
+    protected GreenfootImage specialLEFT = null;
+    protected GreenfootImage specialRIGHT = null;
     protected String facing;
     protected String winner;
     
