@@ -1,22 +1,10 @@
 #BlueJ class context
-<<<<<<< HEAD:world.ctxt
-comment0.target=world
+comment0.target=CoreArena
 comment0.text=\n\ \n
 comment1.params=
-comment1.target=world()
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ world.\n
-=======
-comment0.target=CoreArena
-comment0.text=\r\n\ \r\n
-comment1.params=
 comment1.target=CoreArena()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ world.\r\n
->>>>>>> d8e69ad79e2e74d8f438f3296ae6e5f4955f6e5a:CoreArena.ctxt
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ world.\n
 comment2.params=
 comment2.target=void\ prepare()
 comment2.text=\n\ Prepare\ the\ world\ for\ the\ start\ of\ the\ program.\n\ That\ is\:\ create\ the\ initial\ objects\ and\ add\ them\ to\ the\ world.\n
-comment3.params=
-comment3.target=HealthBar\ getHealthBar1()
-comment4.params=
-comment4.target=HealthBar\ getHealthBar2()
-numComments=5
+numComments=3

@@ -14,7 +14,10 @@ public class P2 extends Player
         leftImage=new GreenfootImage("wiz-LEFT.png");
         attackRight = new GreenfootImage("wATR.png");
         attackLeft = new GreenfootImage("wATL.png");
-        
+        dieLeft = new GreenfootImage("wDeadLEFT.png");
+        dieRight = new GreenfootImage("wDeadRIGHT.png");
+
+
         setImage(leftImage);
         facing = "left";
         
