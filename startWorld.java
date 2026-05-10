@@ -33,10 +33,9 @@ public class startWorld extends World
     private void prepare()
     {
         StartButton startButton =  new  StartButton();
-        addObject(startButton, 293, 114);
-
-        startButton.setLocation(298,116);
-        startButton.setLocation(301,132);
+        addObject(startButton, 291, 132);
+        bgMusic.playLoop();
+        
     }
 
     public void stopped()
